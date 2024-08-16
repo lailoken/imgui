@@ -3522,6 +3522,7 @@ void ImGui::TableSaveSettings(ImGuiTable* table)
         if ((column->Flags & ImGuiTableColumnFlags_WidthStretch) == 0)
             save_ref_scale = true;
 
+        /*
         // We skip saving some data in the .ini file when they are unnecessary to restore our state.
         // Note that fixed width where initial width was derived from auto-fit will always be saved as InitStretchWeightOrWidth will be 0.0f.
         // FIXME-TABLE: We don't have logic to easily compare SortOrder to DefaultSortOrder yet so it's always saved when present.
@@ -3533,6 +3534,7 @@ void ImGui::TableSaveSettings(ImGuiTable* table)
             settings->SaveFlags |= ImGuiTableFlags_Sortable;
         if (column->IsUserEnabled != ((column->Flags & ImGuiTableColumnFlags_DefaultHide) == 0))
             settings->SaveFlags |= ImGuiTableFlags_Hideable;
+        */
     }
     settings->SaveFlags &= table->Flags;
     settings->RefScale = save_ref_scale ? table->RefScale : 0.0f;
